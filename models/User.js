@@ -49,6 +49,7 @@ module.exports = class User {
         }
     }
 
+
     static _getUserLogin(body){
         for (let user of data) {
             if (user.username === body.username) {

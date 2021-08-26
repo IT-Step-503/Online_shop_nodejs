@@ -25,4 +25,7 @@ app.use((req,res)=>{
     res.status(404).render("404page");
 });
 
-app.listen(8080);
+
+app.listen(8080, () => {
+    console.log("Server Zapushen na porte 8080");
+});

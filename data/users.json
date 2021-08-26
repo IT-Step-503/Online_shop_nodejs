@@ -8,19 +8,11 @@
     "isAdmin": true
   },
   {
-    "username": "kosta-laps@yandex.ru",
-    "password": "$2a$10$7wgdAefAuvEeWbSRzGM.6O2kRrjPhDdH2Br4.xCyptvUxkmflcIE2",
-    "fullName": "dddddd",
-    "phoneNumber": "+998909011516",
-    "userID": "9c0d6738-815a-4db6-b8f6-05f863365bf8",
-    "isAdmin": false
-  },
-  {
-    "username": "kosta-lapss@yandex.ru",
-    "password": "$2a$10$FoBxUYftD7xtXWhlw4.Gp.GBMetKjWoyVJkUk/FrKwx/PV78ilBLi",
-    "fullName": "arfsda",
-    "phoneNumber": "+998909011516",
-    "userID": "010d493b-5df3-4f05-bb8f-938483b8cd0d",
-    "isAdmin": false
+    "username": "davrony56@gmail.com",
+    "password": "$2a$10$OmjeMmeTIrTaZVlswzYMxOArSnn7297jtIhSJZTlvlbt2t9ohDW6G",
+    "fullName": "Davron",
+    "phoneNumber": "+998909708667",
+    "userID": "c542dc88-32ff-47c6-b750-7c26cdd97156",
+    "isAdmin": true
   }
 ]
