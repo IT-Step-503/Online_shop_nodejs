@@ -1,0 +1,25 @@
+@import "table.css";
+
+table {
+    border-collapse: collapse;   
+}
+
+.table {
+    text-align: center;  
+}
+
+th,
+td {
+    height: 30px;
+    width: 200px; 
+    border: 1px solid black;
+    text-align: center;
+}
+
+.orders {
+    width: 600px;
+}
+
+.orders td {
+    width: 400px;
+}

@@ -1,0 +1,162 @@
+@import "indent.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+header nav {
+    padding: 40px 0px;
+}
+
+nav ol li {
+    margin-left: 100px;
+}
+
+.content {
+    padding: 40px 0px;
+}
+
+.news main {
+    padding: 60px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.section {
+    padding-top: 50px;
+}
+
+.card_item {
+    margin-bottom: 50px;
+}
+
+.card_body {
+    padding: 15px;
+}
+
+.card_item a {
+    padding: 10px 0px;
+}
+
+footer {
+    padding: 40px 0px;
+}
+
+form {
+    margin: auto;
+}
+
+form input:not(.checkbox),
+select {
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.input_box {
+    margin-bottom: 25px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+.login_header {
+    margin: 0px auto 50px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.table {
+    padding: 40px 0px;
+}
+
+th,
+td {
+    padding: 20px 10px;
+}
+
+.btn_buy {
+    padding: 10px 40px;
+}
+
+.product_desc {
+    margin-left: 50px;
+}
+
+.prise {
+    margin-bottom: 20px;
+}
+
+.table_product {
+    margin-top: 40px;
+}
+
+.about_block {
+    margin-top: 40px;
+}
+
+.about_block p:nth-child(2) {
+    margin: 50px 0px 35px 0px;
+}
+
+.youtube {
+    margin: 0px auto 20px;
+}
+
+.contact,
+.address {
+    margin-top: 45px;
+}
+
+.contact h2,
+.address h2 {
+    margin-bottom: 40px;
+}
+
+.contact_info {
+    margin: 15px 25px;
+}
+
+.contact_info p {
+    margin-bottom: 16px;
+}
+
+.contact_info h3 {
+    margin-bottom: 5px;
+}
+
+.products_info {
+    margin-bottom: 40px;
+}
+
+.add_product_form textarea {
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-top: 8px;
+}
+
+.page_404 {
+    padding-top: 0px;
+}
+
+.page_box {
+    margin-bottom: 60px;
+}
+
+.page_box p {
+    margin: 20px 0px;
+}
+
+.acc_ad {
+    margin-top: 16px;
+}
