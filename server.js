@@ -21,6 +21,23 @@ app.use(express.static(path.join(__dirname, `public`)));
 
 // app.use(db)
 
+async function start() {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://dbnodejsuser:dbnodejspassword@cluster0.arh6c.mongodb.net/myFirstDatabase",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
+    app.listen(PORT, () => {
+      console.log("server has been started");
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 app.use(`/auth`, authRoutes);
 app.use(`/admin`, adminRoutes);
 app.use(shopRoutes);
