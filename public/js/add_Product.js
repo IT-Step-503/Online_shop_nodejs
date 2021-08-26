@@ -43,5 +43,13 @@ submitBtn.addEventListener("click", function(e) {
     })
 
     console.log(data);
+
+    const request = new XMLHttpRequest()
+    request.open("POST", "http://localhost:8080/admin/add-product") 
+    request.send(data)
+    
+
+
+
     e.preventDefault();
 });
