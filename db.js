@@ -6,7 +6,6 @@ const db = mongoose.connect(url)
 
 module.exports = class Mongoose {
     constructor(db) {
-
         this.db = db
     }
 }
