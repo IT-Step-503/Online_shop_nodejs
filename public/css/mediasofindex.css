@@ -1,0 +1,134 @@
+@media screen and (max-width:320px) {
+  .m_menu{
+    font-size: 3rem;
+  }
+  .hidden{
+    display: block;
+}
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  position: relative;
+}
+.nav_menu {
+  display: none;
+}
+.m_active{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  list-style-type: none;
+  font-size: 20px;
+  width: 100%;
+  top: 100px;
+}
+nav a img {
+  width: 50px;
+}
+nav ol li {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 10px 0;
+}
+nav ol li a{
+  padding: 10px 0 0 10px;
+}
+
+/* main */
+.news .container {
+  width: 320px;
+}
+.content {
+  padding: 0;
+}
+.news main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 500px;
+  padding: 60px;
+  background: url("../img/bg_header.png") no-repeat 90% 0;
+}
+h1 {
+  font-size: 30px;
+  width: 100px;
+  font-weight: 300;
+  text-align: end;
+}
+/* Product */
+.section {
+  padding-top: 50px;
+}
+
+.cards_wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  box-shadow: 0px 0px 7px #a7a7a7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  padding: 5px;
+}
+
+.card_wrapper { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_wrapper a{ 
+  font-size: 8px;
+  width: 125px;
+  margin-right: 10px ;
+}
+.card_wrapper a:last-child{
+  margin: 0;
+}
+
+.card_item a {
+  display: block;
+  text-decoration: none;
+  font-family: inherit;
+  width: 132px;
+  text-align: center;
+  padding: 10px 0px;
+  border: 0;
+  background-color: #fc2;
+}
+
+.card_image {
+  width: 140px;
+  height: 200px;
+  object-fit: cover;
+}
+.description{
+  height: 23px;
+  font-size: 10px;
+  overflow: hidden;
+}
+.card_title {
+  font-size: 10px;
+}
+.card_prise {
+  font-size: 10px;
+  font-weight: 700;
+}
+  }

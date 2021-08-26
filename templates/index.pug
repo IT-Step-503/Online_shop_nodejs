@@ -24,7 +24,7 @@ html(lang="en")
                                     .card_body
                                         h3(class ="card_title") #{products[i].title}
                                         p(class ="card_prise") #{products[i].prise}$
-                                        p #{products[i].desc}
+                                        p.description #{products[i].desc}
                                         .card_wrapper
                                             a(href="/product/" + products[i].prodId) Learn more
                                             a(href="") Add to card
