@@ -1,0 +1,26 @@
+include includes/head
+include includes/nav
+include includes/footer
+doctype html
+html(lang="en")
+    +head("Products")
+    body
+        .wrapper
+            header 
+                +nav
+            .content
+                .container
+                    h2 Products
+                    .cards_wrapper
+                        each prod in products
+                            .card_item
+                                img.card_image(src=prod.imgurl alt="")
+                                .card_body
+                                    h3.card_title #{prod.title}
+                                    p.card_prise #{prod.prise}$
+                                    p #{prod.desc}
+                                    .card_wrapper
+                                        a(href="/product/" + prod.prodId) Learn more
+                                        a(href="") Add to card                
+            +footer
+        script(src="./js/index.js")    
