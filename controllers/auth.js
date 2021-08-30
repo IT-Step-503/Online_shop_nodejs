@@ -8,12 +8,15 @@ exports.postLogin = (req, res) => {
     let bool = User._checkLogin(body);
     let isAdmin = User._getUserLogin(body)
 
-    res.cookie("isAdmin", isAdmin, { path: '/admin', secure: true });
+    res.cookie("isAdmin", isAdmin ,{path: '/admin', secure: true});
 
-    if (bool) {
-        res.redirect("/cart");
-    } else {
-        res.redirect("/auth/login")
+    if(isAdmin){
+        res.redirect("/admin/add-product");
+    }else{
+       if(bool){
+            res.redirect("/cart")
+       }else{
+            res.redirect("/auth/login")
     }
 }
 
