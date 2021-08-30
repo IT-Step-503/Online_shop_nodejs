@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "imgurl": "/img/img_placeholder.jpg",
@@ -50,6 +51,9 @@
     ]
   },
 {
+=======
+[{
+>>>>>>> 0b181891a6f685856d144105aeb53ac6d1b7b9d0
         "imgurl": "/img/img_placeholder.jpg",
         "imgUrls": [
             "/img/img_placeholder.jpg",
