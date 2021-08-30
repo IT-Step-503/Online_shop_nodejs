@@ -49,8 +49,7 @@ module.exports = class User {
         }
     }
 
-
-    static _getUserLogin(body){
+    static _getUserLogin(body) {
         for (let user of data) {
             if (user.username === body.username) {
                 return user.isAdmin;
@@ -58,4 +57,3 @@ module.exports = class User {
         }
     }
 }
-
