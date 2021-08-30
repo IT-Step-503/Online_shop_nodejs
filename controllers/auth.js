@@ -19,6 +19,7 @@ exports.postLogin = (req, res) => {
             res.redirect("/auth/login")
     }
 }
+}
 
 exports.getRegister = (req, res) => {
     res.render("register");
