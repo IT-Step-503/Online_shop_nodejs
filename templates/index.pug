@@ -22,9 +22,15 @@ html(lang="en")
                                 .card_item
                                     img.card_image(src=prod.imgurl alt="")
                                     .card_body
+<<<<<<< HEAD
+                                        h3(class ="card_title") #{products[i].title}
+                                        p(class ="card_prise") #{products[i].prise}$
+                                        p.description #{products[i].desc}
+=======
                                         h3(class ="card_title") #{prod.title}
                                         p(class ="card_prise") #{prod.prise}$
                                         p #{prod.desc}
+>>>>>>> 4104f62e823667ccc543dee52493a7857db7b067
                                         .card_wrapper
                                             a(href="/product/" + prod.prodId) Learn more
                                             a(href="") Add to card
