@@ -1,8 +1,3 @@
-
-
-
-
-
 body {
     background-color: #eee;
 }
@@ -34,8 +29,6 @@ nav ol a {
     text-decoration: none;
 }
 
-
-
 .wrapper {
     display: flex;
     min-height: 100vh;
@@ -53,12 +46,6 @@ nav ol a {
     height: 700px; 
     background: url("../img/bg_header.png") no-repeat 80% 0;
 }
-
-
-
-
-
-
 
 .cards_wrapper {
     display: flex;
