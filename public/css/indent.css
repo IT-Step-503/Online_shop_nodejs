@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+header nav {
+    padding: 40px 0px;
+}
+
+nav ol li {
+    margin-left: 100px;
+}
+
+.content {
+    padding: 40px 0px;
+}
+
+.news main {
+    padding: 60px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.section {
+    padding-top: 50px;
+}
+
+.card_item {
+    margin-bottom: 50px;
+}
+
+.card_body {
+    padding: 15px;
+}
+
+.card_item a {
+    padding: 10px 0px;
+}
