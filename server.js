@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, `public`)));
 async function start() {
     try {
         await mongoose.connect(
-            "mongodb+srv://onlineshop:onlineshopdb@cluster0.jgoek.mongodb.net/test", {
+            "mongodb+srv://dbnodejsuser:dbnodejspassword@cluster0.arh6c.mongodb.net/myFirstDatabase", {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
             }
@@ -46,7 +46,4 @@ app.use((req, res) => {
     res.status(404).render("404page");
 });
 
-
-app.listen(8080, () => {
-    console.log("Server Zapushen na porte 8080");
-});
+app.listen(8080);
