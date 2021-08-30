@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, `public`)));
 async function start() {
     try {
         await mongoose.connect(
-            "mongodb+srv://dbnodejsuser:dbnodejspassword@cluster0.arh6c.mongodb.net/myFirstDatabase", {
+            "mongodb+srv://onlineshop:onlineshopdb@cluster0.jgoek.mongodb.net/test", {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
             }
