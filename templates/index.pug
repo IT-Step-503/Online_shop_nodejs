@@ -18,15 +18,15 @@ html(lang="en")
                     .container
                         h2 Products
                         .cards_wrapper
-                             each (var i = 0; i < 6; i++)
+                            each prod in products
                                 .card_item
-                                    img.card_image(src=products[i].imgurl alt="")
+                                    img.card_image(src=prod.imgurl alt="")
                                     .card_body
-                                        h3(class ="card_title") #{products[i].title}
-                                        p(class ="card_prise") #{products[i].prise}$
-                                        p #{products[i].desc}
+                                        h3(class ="card_title") #{prod.title}
+                                        p(class ="card_prise") #{prod.prise}$
+                                        p #{prod.desc}
                                         .card_wrapper
-                                            a(href="/product/" + products[i].prodId) Learn more
+                                            a(href="/product/" + prod.prodId) Learn more
                                             a(href="") Add to card
             +footer
         script(src="./js/index.js")             
