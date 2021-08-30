@@ -18,7 +18,7 @@ html(lang="en")
                     .container
                         h2 Products
                         .cards_wrapper
-                            - for (var i = 0; i < 6; i++)
+                             each (var i = 0; i < 6; i++)
                                 .card_item
                                     img.card_image(src=products[i].imgurl alt="")
                                     .card_body
