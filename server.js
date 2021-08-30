@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
+const jwt = require("jsonwebtoken");
 
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
@@ -15,9 +16,10 @@ const app = express();
 app.set("views", "templates");
 app.set("view engine", "pug");
 
+
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(bodyParser.json({ limit: "50mb" }))
 app.use(express.static(path.join(__dirname, `public`)));
 
 //app.use(db)

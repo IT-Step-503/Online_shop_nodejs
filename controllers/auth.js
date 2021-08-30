@@ -5,20 +5,20 @@ exports.getLogin = (req, res) => {
 }
 exports.postLogin = (req, res) => {
     const { body } = req;
-    let bool = User._checkLogin(body);
-    let isAdmin = User._getUserLogin(body)
+    let bool = User._checkUsername(body) && User._checkPassword(body);
+    let isAdmin = User._checkIsAdmin(body)
 
-    res.cookie("isAdmin", isAdmin ,{path: '/admin', secure: true});
+    res.cookie("isAdmin", isAdmin, { path: '/admin', secure: true });
 
-    if(isAdmin){
+    if (isAdmin) {
         res.redirect("/admin/add-product");
-    }else{
-       if(bool){
+    } else {
+        if (bool) {
             res.redirect("/cart")
-       }else{
+        } else {
             res.redirect("/auth/login")
+        }
     }
-}
 }
 
 exports.getRegister = (req, res) => {
@@ -27,6 +27,7 @@ exports.getRegister = (req, res) => {
 
 exports.postRegister = (req, res) => {
     const { body } = req;
+    console.log(body);
     new User(body.username, body.password, body.fullName, body.phoneNumber, body.userID).register();
     res.redirect("/");
 }

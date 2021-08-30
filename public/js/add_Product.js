@@ -45,7 +45,7 @@ submitBtn.addEventListener("click", function(e) {
 
     let request = new XMLHttpRequest();
     request.open("POST", "http://localhost:8080/admin/add-product", true);
-    request.setRequestHeader('Content-type',  'application/json; charset=utf-8');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.send(JSON.stringify(data));
 
     window.location.reload();

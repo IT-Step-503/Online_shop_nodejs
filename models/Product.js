@@ -5,6 +5,8 @@ const { v4: uuidv4 } = require('uuid');
 
 const p = path.join(__dirname, "..", "data", "products.json");
 
+const ProductSchema = require("../schemas/User");
+
 let dataProduct = null;
 fs.readFile(p, (err, products) => {
     if (err) throw err
@@ -13,14 +15,14 @@ fs.readFile(p, (err, products) => {
 
 module.exports = class Product {
     constructor(data) {
-        this.imgurl = data.mainImgUrl;
-        this.imgUrls = [data.mainImgUrl, data.secondImgUrl, data.thirdImgUrl];
+        this.imgurl = data.imgurl;
+        this.imgUrls = data.imgUrls;
         this.title = data.title;
         this.prise = data.prise;
         this.desc = data.desc;
         this.code = data.code;
         this.color = data.color;
-        this.sizes = []
+        this.sizes = data.sizes;
         this.prodId = uuidv4();
     }
 

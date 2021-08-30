@@ -2,7 +2,10 @@ const path = require("path");
 const fs = require("fs");
 
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken")
 const { v4: uuidv4 } = require('uuid');
+
+const UserModel = require("../schemas/User");
 
 const p = path.join(__dirname, "..", "data", "users.json");
 
@@ -34,22 +37,35 @@ module.exports = class User {
 
         data.push(this);
 
+        const token = jwt.sign({ user_id: this._id, username: this.username },
+            process.env.TOKEN_KEY, {
+                expiresIn: "2h"
+            }
+        );
+
         fs.writeFile(p, JSON.stringify(data, null, 2), (err) => {
             if (err) throw err
             console.log("User registered!");
         })
     }
 
-    static _checkLogin(body) {
+    static _checkUsername(body) {
         for (let user of data) {
-            console.log(user);
-            if (user.username === body.username && bcrypt.compareSync(body.password, user.password)) {
+            if (user.username === body.username) {
                 return true
             }
         }
     }
 
-    static _getUserLogin(body) {
+    static _checkPassword(body) {
+        for (let user of data) {
+            if (bcrypt.compareSync(body.password, user.password)) {
+                return true
+            }
+        }
+    }
+
+    static _checkIsAdmin(body) {
         for (let user of data) {
             if (user.username === body.username) {
                 return user.isAdmin;
