@@ -14,5 +14,13 @@
     "phoneNumber": "+998909708667",
     "userID": "c542dc88-32ff-47c6-b750-7c26cdd97156",
     "isAdmin": true
+  },
+  {
+    "username": "localHost@gmail.com",
+    "password": "$2a$10$3lvyVeUbSvxZAQ/PLMqCbOkHj7mB4EGyxUVW/00EVeFKUAXEvCVqG",
+    "fullName": "Bek",
+    "phoneNumber": "+998998542782",
+    "userID": "40e7eef5-344d-475f-920c-b2a9b0a6528b",
+    "isAdmin": false
   }
 ]
