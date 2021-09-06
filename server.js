@@ -9,7 +9,8 @@ const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const shopRoutes = require("./routes/shopRoute");
 
-//const db = require("./db")
+const db = require("./db");
+db.connect();
 
 const app = express();
 
@@ -21,24 +22,6 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }))
 app.use(express.static(path.join(__dirname, `public`)));
-
-//app.use(db)
-
-async function start() {
-    try {
-        await mongoose.connect(
-            "mongodb+srv://onlineshop:onlineshopdb@cluster0.jgoek.mongodb.net/test", {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-            }
-        );
-        app.listen(PORT, () => {
-            console.log("server has been started");
-        });
-    } catch (e) {
-        console.log(e);
-    }
-}
 
 app.use(`/auth`, authRoutes);
 app.use(`/admin`, adminRoutes);

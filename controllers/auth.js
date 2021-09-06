@@ -1,33 +1,62 @@
-const User = require("../models/User")
+const UserModel = require("../schemas/User");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 exports.getLogin = (req, res) => {
     res.render("login");
-}
-exports.postLogin = (req, res) => {
-    const { body } = req;
-    let bool = User._checkUsername(body) && User._checkPassword(body);
-    let isAdmin = User._checkIsAdmin(body)
-
-    res.cookie("isAdmin", isAdmin, { path: '/admin', secure: true });
-
-    if (isAdmin) {
-        res.redirect("/admin/add-product");
-    } else {
-        if (bool) {
-            res.redirect("/cart")
-        } else {
-            res.redirect("/auth/login")
-        }
-    }
 }
 
 exports.getRegister = (req, res) => {
     res.render("register");
 }
 
-exports.postRegister = (req, res) => {
-    const { body } = req;
-    console.log(body);
-    new User(body.username, body.password, body.fullName, body.phoneNumber, body.userID).register();
+
+exports.postLogin = async(req, res) => {
+    const { username, password } = req.body;
+
+    const userLogin = await UserModel.findOne({ username });
+
+    if (userLogin && await bcrypt.compareSync(password, userLogin.password)) {
+
+        const token = jwt.sign({ user_id: userLogin._id, username: userLogin.username },
+            String(process.env.TOKEN_KEY), {
+                expiresIn: "2h"
+            }
+        );
+        userLogin.token = token;
+
+        res.json(userLogin);
+    } else {
+        return (res.status(409).send("User already exists!"))
+    }
+
+}
+
+
+exports.postRegister = async(req, res) => {
+    const { username, password, fullName, phoneNumber } = req.body;
+    const userExists = await UserModel.findOne({ username });
+
+    if (userExists) {
+        return (res.status(409).send("User already exists!"))
+    }
+
+    const encryptedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = await UserModel.create({
+        fullName,
+        username,
+        password: encryptedPassword,
+        phoneNumber,
+        isAdmin: false
+    });
+
+    const token = jwt.sign({ user_id: newUser._id, username: newUser.username },
+        String(process.env.TOKEN_KEY), {
+            expiresIn: "2h"
+        });
+
+    newUser.token = token;
+
     res.redirect("/");
 }

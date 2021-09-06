@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const p = path.join(__dirname, "..", "data", "products.json");
 
-const ProductSchema = require("../schemas/User");
+const ProductSchema = require("../schemas/Product");
 
 let dataProduct = null;
 fs.readFile(p, (err, products) => {
